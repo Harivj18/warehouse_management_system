@@ -10,6 +10,11 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { ReportComponent } from './report/report.component';
+import { PwdResetComponent } from './pwd-reset/pwd-reset.component';
+import{HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -19,13 +24,18 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     ContactusComponent,
     MainNavComponent,
-    SignupComponent
+    SignupComponent,
+    AdminNavComponent,
+    AdministrationComponent,
+    ReportComponent,
+    PwdResetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

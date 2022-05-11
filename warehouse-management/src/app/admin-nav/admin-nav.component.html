@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <h1>
+            <a class="navbar-brand" href="#">Warehouse Management</a>
+        </h1>
+        <div class="d-flex ">
+            <div class="navbar-nav">
+                <div class="dropdown">
+                    <a class="nav-item nav-link dropdown-toggle" id="dropdownMenu" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Administration
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Add Administrator</a></li>
+                        <li><a class="dropdown-item" href="#">Add Warehouse</a></li>
+                        <li><a class="dropdown-item" href="#">Add Product</a></li>
+                        <li><a class="dropdown-item" href="#">Add Supplier</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown">
+                    <a class="nav-item nav-link dropdown-toggle" id="dropdownMenu" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Reports
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Warehouse Report</a></li>
+                        <li><a class="dropdown-item" href="#">Product Report</a></li>
+                        <li><a class="dropdown-item" href="#">All Products</a></li>
+                        <li><a class="dropdown-item" href="#">Sales Report</a></li>
+                        <li><a class="dropdown-item" href="#">All Warehouse</a></li>
+                    </ul>
+                </div>
+                <a class="nav-item nav-link" [routerLink]="['/pwdreset']">Change Password</a>
+                <a class="nav-item nav-link" [routerLink]="['/home']">LogOut</a>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div> -->
+
+</nav>
+
+<router-outlet></router-outlet>
