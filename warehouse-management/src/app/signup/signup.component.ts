@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { ApiCallService } from '../api-call.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,11 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
   value:boolean=true;
   signup!:FormGroup;
-  constructor(private formbuilder:FormBuilder) { }
+  constructor(private formbuilder:FormBuilder,private api:ApiCallService) {
+    this.api.connecting().subscribe(data =>{
+      console.log(data);
+    })
+   }
 
   ngOnInit(): void {
     this.signup = this.formbuilder.group(
@@ -27,5 +32,5 @@ export class SignupComponent implements OnInit {
   check(){
     this.value=!this.value;
   }
-
+ 
 }

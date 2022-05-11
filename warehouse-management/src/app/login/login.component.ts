@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { ApiService } from '../service/api.service';
+import { login } from '../service/loginmodel';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,8 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginform!:FormGroup;
-  constructor(private formbuilder:FormBuilder) { }
+  logdata:login=new login();
+  constructor(private formbuilder:FormBuilder,private api:ApiService) { }
 
   ngOnInit(): void {
   this.loginform=this.formbuilder.group(
@@ -18,6 +21,15 @@ export class LoginComponent implements OnInit {
 
     }
   )
+  }
+  getdata(){
+    this.api.createDB("first_sample").subscribe(res=>{
+      console.log(res);
+      alert("db connected successfully!!!");
+    },err=>{
+      console.log("oops!");
+    }
+      )
   }
 
 }
