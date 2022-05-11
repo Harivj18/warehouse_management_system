@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder } from '@angular/forms';
+import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +7,17 @@ import { FormGroup,FormBuilder } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  constructor() { }
+  loginform!:FormGroup;
+  constructor(private formbuilder:FormBuilder) { }
 
   ngOnInit(): void {
+  this.loginform=this.formbuilder.group(
+    {
+      username:['',Validators.required],
+      password:['',Validators.required],
+
+    }
+  )
   }
 
 }
