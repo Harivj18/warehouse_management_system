@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/Harivj18/warehouse_management_system#readme",
   "dependencies": {
+    "@cloudant/cloudant": "^4.5.1",
     "body-parser": "^1.20.0",
+    "cloudant": "^1.10.0-NOTICE",
     "cors": "^2.8.5",
     "express": "^4.18.1"
   }

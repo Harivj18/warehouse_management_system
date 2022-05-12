@@ -12,4 +12,10 @@ export class ApiCallService {
   connecting(){
     return this.http.get('http://localhost:8000/send')
   }
-}
+  admindata(formobject:any){
+    return this.http.post('http://localhost:8000/postquery/',formobject);
+  }
+  logindata(formobject:any){
+    return this.http.post('http://localhost:8080/postquery/',formobject);
+  }
+  }

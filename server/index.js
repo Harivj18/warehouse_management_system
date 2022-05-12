@@ -11,7 +11,7 @@ app.use(
   })
 );
 app.get("/send", function (request, response) {
-  response.json({ name: "hari" });
+  response.json({ name: "hari2", id: "1", email: "hari@gmail.com" });
 });
 app.post("/postquery", urlParser, function (request, response) {
   var fname = request.body.fname;
@@ -30,3 +30,24 @@ app.listen(port, (err) => {
 
   console.log(`server is listening on http://localhost:${port}`);
 });
+// const Cloudant = require("@cloudant/cloudant");
+// var url =
+//   "https://fffdcced-9a09-44ae-aa2f-e27add7efeb7-bluemix.cloudantnosqldb.appdomain.cloud";
+// var username = "apikey-v2-zyhv5j7i61imeby1qya0ma2ejrc0fkf9n4e4bl3w5gn";
+// var password = "ec6094ae0714dc7a5ffc50a86924bef3";
+
+// var cloudant = Cloudant({ url: url, username: username, password: password });
+
+// cloudant.db
+//   .create("sam")
+//   .then(() =>
+//     cloudant
+//       .use("sam")
+//       .insert({ happy: true }, rabbit)
+//       .then((data) => {
+//         console.log(data);
+//       })
+//   )
+//   .catch((err) => {
+//     console.log(err);
+//   });
