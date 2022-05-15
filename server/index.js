@@ -51,3 +51,17 @@ app.listen(port, (err) => {
 //   .catch((err) => {
 //     console.log(err);
 //   });
+
+//   var data = file.readFileSync("details.json");
+
+//   var details = JSON.parse(data);
+//   details.push(object);
+//   console.log(details);
+
+//   file.writeFile("details.json", JSON.stringify(details), (err) => {
+//     if (err) throw err;
+
+//     console.log("Data added successfully");
+//     details = JSON.parse(data);
+//   });
+// response.end(JSON.stringify(patient));

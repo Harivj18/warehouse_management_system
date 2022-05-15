@@ -1,8 +1,7 @@
-const express = require("express");
+// const express = require("express");
 const connection = require("express");
 const bodyparser = require("body-parser");
 const app = connection();
-app.use(express.static("public"));
 const port = 8000;
 var login = {};
 const file = require("fs");
@@ -11,7 +10,6 @@ const { response } = require("express");
 const { nextTick } = require("process");
 const cors = require("cors");
 const dbconnection = require("./db");
-// app.use(express.static("public"));
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
@@ -19,16 +17,6 @@ app.use(
     origin: "http://localhost:4200",
   })
 );
-// var urlParser = bodyparser.urlencoded({ extended: false });
-// app.get("/", function (request, response) {
-//   var data = file.readFileSync("details.json");
-
-//   var details = JSON.parse(data);
-//   console.log("From get functin", details);
-//   exports.dataset = details;
-
-//   //   response.sendFile(`${__dirname}/`);
-// });
 
 app.post("/postquery", (request, response, next) => {
   console.log(request);
@@ -39,26 +27,36 @@ app.post("/postquery", (request, response, next) => {
     email: request.body.email,
     password: request.body.password,
     confirm_password: request.body.confirm_password,
+    type: "usersignup",
   };
 
-  //   var data = file.readFileSync("details.json");
-
-  //   var details = JSON.parse(data);
-  //   details.push(object);
-  //   console.log(details);
-
-  //   file.writeFile("details.json", JSON.stringify(details), (err) => {
-  //     if (err) throw err;
-
-  //     console.log("Data added successfully");
-  //     details = JSON.parse(data);
-  //   });
-  // response.end(JSON.stringify(patient));
   dbconnection.insert(object);
   //   response.redirect("..");
   console.log("Data added");
 });
+app.get("/getquery", (request, response, next) => {
+  console.log(request);
+  let queryObj = {
+    selector: {
+      username: {
+        $gt: "0",
+      },
+      password: {
+        $gt: "0",
+      },
+    },
+  };
+  var retval = dbconnection.getlist(queryObj);
+  response.json(retval);
 
+  console.log("Data Fetched");
+  // var object1 = {
+  //   username: request.body.username,
+  //   email: request.body.email,
+  // };
+  // dbconnection.getuser(object1);
+  // console.log("Data Fetched");
+});
 app.listen(port, (err) => {
   if (err) {
     return console.log("something bad happened", err);

@@ -8,7 +8,8 @@ export class ServiceapiService {
   constructor(private http:HttpClient) { }
 
   logindata(formobject:any){
-    return this.http.post('http://localhost:8080/postquery/',formobject);
+    
+    return this.http.get('http://localhost:8000/getquery/',formobject);
   }
 
 }

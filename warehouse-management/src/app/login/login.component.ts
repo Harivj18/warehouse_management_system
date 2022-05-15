@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
     {
       username:['',Validators.required],
       password:['',Validators.required],
-
     }
   )
   }
@@ -34,7 +33,12 @@ export class LoginComponent implements OnInit {
   //     )
   // }
   login(Formvalue:NgForm){
-        this.serve.logindata(Formvalue);
+        this.serve.logindata(Formvalue).subscribe((data)=>{
+        console.log('login.ts',Formvalue);
+        console.log(data);
+        
+          
+        })
   }
  
 

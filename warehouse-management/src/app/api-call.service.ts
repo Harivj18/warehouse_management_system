@@ -9,13 +9,10 @@ export class ApiCallService {
   constructor(private http:HttpClient) { 
 
   }
-  connecting(){
-    return this.http.get('http://localhost:8000/send')
-  }
   admindata(formobject:any){
     return this.http.post('http://localhost:8000/postquery/',formobject);
   }
-  logindata(formobject:any){
-    return this.http.post('http://localhost:8080/postquery/',formobject);
-  }
+  // logindata(formobject1:any){
+  //   return this.http.get('http://localhost:8000/getquery/',formobject1);
+  // }
   }
