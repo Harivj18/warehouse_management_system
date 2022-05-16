@@ -14,7 +14,10 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { ReportComponent } from './report/report.component';
 import { PwdResetComponent } from './pwd-reset/pwd-reset.component';
-import{HttpClientModule} from '@angular/common/http'
+import{HttpClientModule} from '@angular/common/http';
+import { ProductsAllComponent } from './products-all/products-all.component';
+import { UserAllComponent } from './user-all/user-all.component';
+import { AddUserComponent } from './add-user/add-user.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import{HttpClientModule} from '@angular/common/http'
     AdminNavComponent,
     AdministrationComponent,
     ReportComponent,
-    PwdResetComponent
+    PwdResetComponent,
+    ProductsAllComponent,
+    UserAllComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

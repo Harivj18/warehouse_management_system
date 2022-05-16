@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // value:boolean=false;
   title = 'warehouse-management';
+  // check(){
+  //   this.value=!this.value;
+  // }
 }

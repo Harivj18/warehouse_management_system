@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     }
   )
   }
+
   // getdata(){
   //   this.api.createDB("first_sample").subscribe(res=>{
   //     console.log(res);
@@ -36,10 +37,8 @@ export class LoginComponent implements OnInit {
         this.serve.logindata(Formvalue).subscribe((data)=>{
         console.log('login.ts',Formvalue);
         console.log(data);
-        
-          
         })
   }
- 
+    
 
 }

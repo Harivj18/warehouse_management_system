@@ -1,0 +1,75 @@
+<div class="container mt-5">
+    <div class="card  mx-auto">
+        <div class="card-header text-center">
+            <h1 class="text">Add User</h1>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="adduser" (ngSubmit)="addform(this.adduser.value)">
+                <div class="form-group">
+                    <label for="username" class="text-light">Username :</label>
+                    <input type="text" formControlName="username" class="form-control" placeholder="Enter Username">
+                    <span class="text-danger"
+                        *ngIf="adduser.controls['username'].touched && adduser.hasError('required','username')">
+                        *Username is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="first_Name" class="text-light">First Name :</label>
+                    <input type="text" formControlName="first_name" class="form-control" placeholder="Enter First Name">
+                    <span class="text-danger"
+                        *ngIf="adduser.controls['first_name'].touched && adduser.hasError('required','first_name')">*First
+                        Name is required </span>
+                </div>
+                <div class="form-group">
+                    <label for="last_Name" class="text-light">Last Name :</label>
+                    <input type="text" formControlName="last_name" class="form-control" placeholder="Enter Last Name">
+                    <span class="text-danger"
+                        *ngIf="adduser.controls['last_name'].touched && adduser.hasError('required','last_name')">*Last
+                        Name is required </span>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="text-light">Email :</label>
+                    <input type="email" formControlName="email" class="form-control" placeholder="Enter Your Email ">
+                    <span class="text-danger"
+                        *ngIf="adduser.controls['email'].touched && adduser.hasError('required','email')">*Email is
+                        required </span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-light">Password :</label>
+                    <input type="password" formControlName="password" class="form-control"
+                        placeholder="Enter Your Password">
+                    <span class="text-danger"
+                        *ngIf="adduser.controls['password'].dirty && adduser.hasError('required','password')">*Password
+                        is
+                        required </span>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password" class="text-light">Confirm Password :</label>
+                    <input type="password" formControlName="confirm_password" class="form-control"
+                        placeholder="Confirm Password">
+                    <span class="text-danger"
+                        *ngIf="adduser.controls['confirm_password'].dirty && adduser.hasError('required','confirm_password')">*Confirm
+                        is
+                        required </span>
+                </div>
+                <div class="button text-center">
+                    <button type="submit" class="btn btn-danger px-4 py-2">Sign Up</button>
+                    <button (click)="getuser()">Get</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table>
+        <tbody>
+            <tr *ngFor="let obj of object">
+                <td>{{obj.username}}</td>
+                <td>{{obj.first_Name}}</td>
+                <td>{{obj.last_Name}}</td>
+                <td>{{obj.email}}</td>
+                <td>{{obj.password}}</td>
+                <td>{{obj.confirm_password}}</td>
+                <td><button class="btn btn-danger" (click)="deluser()">Delete</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
